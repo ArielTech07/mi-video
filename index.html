@@ -1,174 +1,176 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Regalo Especial 💛</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            text-align: center;
-            background: linear-gradient(to bottom, #fff7d6, #ffe680);
-            min-height: 100vh;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
+  <meta charset="UTF-8">
+  <title>Regalo Especial 💛</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background: linear-gradient(to bottom, #fff7d6, #ffe680);
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      padding: 10px;
+    }
 
-        h1 {
-            color: #b8860b;
-            margin-bottom: 15px;
-            text-shadow: 1px 1px 2px #fff;
-        }
+    h1 {
+      color: #b8860b;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 2px #fff;
+      font-size: 2rem;
+    }
 
-        .dedicatoria {
-            font-size: 20px;
-            max-width: 650px;
-            padding: 15px 20px;
-            background: #fffdf5;
-            border: 2px solid #d4af37;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            margin-bottom: 20px;
-        }
+    .dedicatoria {
+      font-size: 20px;
+      max-width: 650px;
+      padding: 15px 20px;
+      background: #fffdf5;
+      border: 2px solid #d4af37;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
 
-        button {
-            margin-top: 10px;
-            padding: 12px 28px;
-            font-size: 18px;
-            border: none;
-            border-radius: 14px;
-            background: #f4c430;
-            color: #fff;
-            cursor: pointer;
-            transition: 0.3s;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-        button:hover {
-            background: #e0b020;
-            transform: scale(1.07);
-        }
+    button {
+      margin-top: 10px;
+      padding: 12px 28px;
+      font-size: 18px;
+      border: none;
+      border-radius: 14px;
+      background: #f4c430;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    button:hover {
+      background: #e0b020;
+      transform: scale(1.07);
+    }
 
-        .imagen-contenedor {
-            display: none;
-            margin-top: 30px;
-            animation: aparecer 1.2s ease forwards;
-            position: relative;
-            z-index: 3;
-            width: auto;
-            height: 300px;   /* alto fijo */
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
-        }
+    .imagen-contenedor {
+      display: none;
+      margin-top: 30px;
+      animation: aparecer 1.2s ease forwards;
+      position: relative;
+      z-index: 3;
+      width: 80%;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    }
 
-        .imagen-contenedor video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* llena el rectángulo horizontal */
-            border-radius: 12px;
-            display: block;
-        }
+    .imagen-contenedor video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
 
-        @keyframes aparecer {
-            from { opacity: 0; transform: scale(0.6) translateY(30px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
-        }
+    @keyframes aparecer {
+      from { opacity: 0; transform: scale(0.6) translateY(30px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
 
-        .corazones {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            pointer-events: none;
-            z-index: 2;
-            display: none;
-        }
+    .corazones {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      z-index: 2;
+      display: none;
+    }
 
-        .corazon-caida {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: #ffeb3b;
-            transform: rotate(-45deg);
-            border-radius: 2px;
-        }
-        .corazon-caida::before,
-        .corazon-caida::after {
-            content: "";
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: #ffeb3b;
-            border-radius: 50%;
-        }
-        .corazon-caida::before { top: -10px; left: 0; }
-        .corazon-caida::after  { left: 10px; top: 0; }
+    .corazon-caida {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ffeb3b;
+      transform: rotate(-45deg);
+      border-radius: 2px;
+    }
+    .corazon-caida::before,
+    .corazon-caida::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ffeb3b;
+      border-radius: 50%;
+    }
+    .corazon-caida::before { top: -10px; left: 0; }
+    .corazon-caida::after  { left: 10px; top: 0; }
 
-        @keyframes caer {
-            0% { transform: translateY(-40px) rotate(-45deg) scale(0.9); opacity: 0; }
-            10% { opacity: 1; }
-            60% { opacity: 1; }
-            100% { transform: translateY(420px) rotate(-45deg) scale(0.95); opacity: 0; }
-        }
+    @keyframes caer {
+      0% { transform: translateY(-40px) rotate(-45deg) scale(0.9); opacity: 0; }
+      10% { opacity: 1; }
+      60% { opacity: 1; }
+      100% { transform: translateY(420px) rotate(-45deg) scale(0.95); opacity: 0; }
+    }
 
-        .hc1 { left: 6%;  animation: caer 6.6s linear infinite; animation-delay: 0s; }
-        .hc2 { left: 12%; animation: caer 7.4s linear infinite; animation-delay: 1.1s; }
-        .hc3 { left: 18%; animation: caer 5.8s linear infinite; animation-delay: 2.0s; }
+    .hc1 { left: 6%;  animation: caer 6.6s linear infinite; animation-delay: 0s; }
+    .hc2 { left: 12%; animation: caer 7.4s linear infinite; animation-delay: 1.1s; }
+    .hc3 { left: 18%; animation: caer 5.8s linear infinite; animation-delay: 2.0s; }
+    .hc4 { right: 6%;  animation: caer 6.2s linear infinite; animation-delay: 0.6s; }
+    .hc5 { right: 12%; animation: caer 7.8s linear infinite; animation-delay: 1.7s; }
+    .hc6 { right: 18%; animation: caer 5.6s linear infinite; animation-delay: 2.4s; }
 
-        .hc4 { right: 6%;  animation: caer 6.2s linear infinite; animation-delay: 0.6s; }
-        .hc5 { right: 12%; animation: caer 7.8s linear infinite; animation-delay: 1.7s; }
-        .hc6 { right: 18%; animation: caer 5.6s linear infinite; animation-delay: 2.4s; }
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      h1 { font-size: 1.6rem; }
+      .dedicatoria { font-size: 16px; padding: 12px 15px; }
+      button { font-size: 16px; padding: 10px 22px; }
+      .imagen-contenedor { width: 95%; height: 220px; }
+    }
 
-        @media (max-width:720px){
-            .imagen-contenedor {
-                width: 90%;   /* ocupa casi todo el ancho en móvil */
-                height: 200px; /* altura menor */
-            }
-        }
-    </style>
+    @media (max-width: 480px) {
+      h1 { font-size: 1.3rem; }
+      .dedicatoria { font-size: 15px; padding: 10px 12px; }
+      button { font-size: 15px; padding: 8px 18px; }
+      .imagen-contenedor { width: 100%; height: 180px; }
+    }
+  </style>
 </head>
 <body>
-    <h1>💐 Un regalo especial 💐</h1>
+  <h1>💐 Un regalo especial 💐</h1>
 
-    <div class="dedicatoria">
-        "HOLAAAAA PEEE, ya se que no es la gran cosa pero al menos me di el tiempo y las ganas de hacer esto, capaz eres mas de cosas materiale, pero queria poner en practica lo que estaba aprendiendo pues. Este es mi simbolo de amor por esta fecha (AUNQ NO LE ENCUENTRE EL SENTIDO A CELEBRAR ESTO), espero sea de agrado mi creatividad y ya GAAA, te amo besos 💗"
-    </div>
+  <div class="dedicatoria">
+    "HOLAAAAA PEEE, ya sé que no es la gran cosa pero al menos me di el tiempo y las ganas de hacer esto..."
+  </div>
 
-    <button id="boton" onclick="abrirRegalo()">Abrir regalo </button>
+  <button id="boton" onclick="abrirRegalo()">Abrir regalo </button>
 
-    <!-- corazones caídos -->
-    <div class="corazones" id="corazones">
-        <div class="corazon-caida hc1"></div>
-        <div class="corazon-caida hc2"></div>
-        <div class="corazon-caida hc3"></div>
-        <div class="corazon-caida hc4"></div>
-        <div class="corazon-caida hc5"></div>
-        <div class="corazon-caida hc6"></div>
-    </div>
+  <!-- corazones -->
+  <div class="corazones" id="corazones">
+    <div class="corazon-caida hc1"></div>
+    <div class="corazon-caida hc2"></div>
+    <div class="corazon-caida hc3"></div>
+    <div class="corazon-caida hc4"></div>
+    <div class="corazon-caida hc5"></div>
+    <div class="corazon-caida hc6"></div>
+  </div>
 
-    <div class="imagen-contenedor" id="imagen">
-    <video autoplay muted loop playsinline 
-            style="width:100%; height:100%; object-fit:contain;">
-        <source src="gaaa.mp4" type="video/mp4">
-        Tu navegador no soporta el video.
+  <div class="imagen-contenedor" id="imagen">
+    <video autoplay muted loop playsinline>
+      <source src="gaaa.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
     </video>
-</div>
+  </div>
 
-
-    <script>
-        function abrirRegalo() {
-            const imagen = document.getElementById("imagen");
-            const boton = document.getElementById("boton");
-            const corazones = document.getElementById("corazones");
-
-            imagen.style.display = "block";
-            corazones.style.display = "block";
-            boton.style.display = "none";
-        }
-    </script>
+  <script>
+    function abrirRegalo() {
+      document.getElementById("imagen").style.display = "block";
+      document.getElementById("corazones").style.display = "block";
+      document.getElementById("boton").style.display = "none";
+    }
+  </script>
 </body>
 </html>
+
