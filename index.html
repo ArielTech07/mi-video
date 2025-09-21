@@ -56,16 +56,20 @@
             margin-top: 30px;
             animation: aparecer 1.2s ease forwards;
             position: relative;
-            z-index: 3; 
+            z-index: 3;
+            width: auto;
+            height: 300px;   /* alto fijo */
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
         }
 
         .imagen-contenedor video {
-            max-width: 320px;
-            max-height: 420px;
-            border-radius: 16px;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
-            display:block;
-            object-fit:cover;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* llena el rectángulo horizontal */
+            border-radius: 12px;
+            display: block;
         }
 
         @keyframes aparecer {
@@ -120,8 +124,10 @@
         .hc6 { right: 18%; animation: caer 5.6s linear infinite; animation-delay: 2.4s; }
 
         @media (max-width:720px){
-            .imagen-contenedor video { max-width: 260px; max-height: 340px; }
-            .hc3, .hc6 { display:none; }
+            .imagen-contenedor {
+                width: 90%;   /* ocupa casi todo el ancho en móvil */
+                height: 200px; /* altura menor */
+            }
         }
     </style>
 </head>
@@ -145,11 +151,13 @@
     </div>
 
     <div class="imagen-contenedor" id="imagen">
-        <video autoplay muted loop playsinline>
-            <source src="gaaa.mp4" type="video/mp4">
-            Tu navegador no soporta el video.
-        </video>
-    </div>
+    <video autoplay muted loop playsinline 
+            style="width:100%; height:100%; object-fit:contain;">
+        <source src="gaaa.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+    </video>
+</div>
+
 
     <script>
         function abrirRegalo() {
